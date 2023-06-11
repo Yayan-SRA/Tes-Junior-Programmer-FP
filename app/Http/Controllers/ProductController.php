@@ -90,7 +90,7 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'nama_produk' => 'required|unique:products,nama_produk',
             'kategori' => 'required',
-            'harga' => 'required|integer|min:0',
+            'harga' => 'required|numeric|min:0|integer',
             'status' => 'required',
         ]);
 
@@ -126,7 +126,7 @@ class ProductController extends Controller
         $product = Product::find($id_produk);
         $rules = ([
             'kategori' => 'required',
-            'harga' => 'required|integer|min:0',
+            'harga' => 'required|numeric|min:0|integer',
             'status' => 'required',
         ]);
 
