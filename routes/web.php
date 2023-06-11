@@ -14,12 +14,8 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/generateData', [ProductController::class, 'generateData']);
+Route::get('/', [ProductController::class, 'index']);
 Route::resource('home', ProductController::class)->parameters([
     'produk' => 'id_produk',
 ]);
-Route::resource('/', ProductController::class);

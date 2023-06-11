@@ -2,6 +2,8 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-10">
+            <h3>Daftar Data Produk</h3>
+            <hr class="mb-3">
             @if (session()->has('success'))
                 <div class="alert alert-success align-items-center alert-dismissible fade show mb-3" role="alert">
                     <div class="text-success d-inline"><i class="mb-1" data-feather="check-circle"></i></div>
@@ -18,7 +20,8 @@
                     @if (!$products->count())
                         <a href="/generateData" class="btn btn-success">Generate Data</a>
                     @else
-                        <a href="{{ route('home.create') }}" class="btn btn-primary">Add Data</a>
+                        <a href="{{ route('home.create') }}" class="btn btn-primary"><span data-feather="plus-square"
+                                class="mb-1"></span> Add Data</a>
                     @endif
                 </div>
             </div>
